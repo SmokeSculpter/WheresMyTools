@@ -6,3 +6,7 @@ Accept: application/json
 ###
 GET {{rootURL}}/api/data/tools
 Accept: application/json
+
+###
+GET {{rootURL}}/api/data/employee
+Accept: application/json

@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "RESTApi.Controllers.DataController",
+    "Method": "GetEmployees",
+    "RelativePath": "api/Data/Employee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RESTApi.Controllers.DataController",
     "Method": "GetAllRecords",
     "RelativePath": "api/Data/Records",
     "HttpMethod": "GET",

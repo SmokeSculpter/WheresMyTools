@@ -41,5 +41,26 @@ namespace RESTApi.Controllers
                     }
                 ).OrderBy(record => record.EmployeeName).ToListAsync());
         }
+
+        [HttpGet("Employee")]
+        public async Task<ActionResult> GetEmployees()
+        {
+            return Ok(
+                    await _context.Records
+                        .Where(x => x.DateCheckedIn == null)
+                        .GroupBy(x => x.Employee.FirstName)
+                        .Select(x => new
+                        {
+                            Name = x.Where(y => y.Employee.FirstName == x.Key).Select(em => em.Employee.FirstName).FirstOrDefault(),
+                            Tools = x.Select(x => new
+                            {
+                                Name = x.Tool.ToolName,
+                                Status = x.Tool.ToolStatus,
+                                CheckedOut = x.DateCheckedOut
+                            }
+                            )
+                        }).ToListAsync()
+                );
+        }
     }
 }
