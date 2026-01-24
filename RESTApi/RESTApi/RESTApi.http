@@ -1,6 +1,8 @@
-@RESTApi_HostAddress = http://localhost:5126
+@rootURL = http://localhost:5126
 
-GET {{RESTApi_HostAddress}}/weatherforecast/
+GET {{rootURL}}/api/data/records
 Accept: application/json
 
 ###
+GET {{rootURL}}/api/data/tools
+Accept: application/json

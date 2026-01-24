@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Hyaci\\Desktop\\WheresMyTools\\RESTApi\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\hyaci\\desktop\\personalprojects\\wheresmytools\\restapi\\restapi\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\hyaci\\desktop\\personalprojects\\wheresmytools\\restapi\\restapi\\restapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\restapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\hyaci\\desktop\\personalprojects\\wheresmytools\\restapi\\restapi\\views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeView.cs",
+              "DocumentMoniker": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\EmployeeView.cs",
+              "RelativeDocumentMoniker": "RESTApi\\Views\\EmployeeView.cs",
+              "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\EmployeeView.cs",
+              "RelativeToolTip": "RESTApi\\Views\\EmployeeView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T07:21:33.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataController.cs",
+              "DocumentMoniker": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Controllers\\DataController.cs",
+              "RelativeDocumentMoniker": "RESTApi\\Controllers\\DataController.cs",
+              "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Controllers\\DataController.cs",
+              "RelativeToolTip": "RESTApi\\Controllers\\DataController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T06:49:36.221Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -42,6 +81,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RESTApi.http",
+              "DocumentMoniker": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.http",
+              "RelativeDocumentMoniker": "RESTApi\\RESTApi.http",
+              "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.http",
+              "RelativeToolTip": "RESTApi\\RESTApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-24T06:38:45.368Z",
+              "EditorCaption": ""
             }
           ]
         },
