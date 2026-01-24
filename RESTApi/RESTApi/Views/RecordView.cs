@@ -14,6 +14,8 @@ namespace RESTApi.Views
 
         public string ToolName { get; set; }
 
+        public string ToolCategory { get; set; }
+
         public int EmployeeId { get; set; }
 
         public string EmployeeName { get; set; }

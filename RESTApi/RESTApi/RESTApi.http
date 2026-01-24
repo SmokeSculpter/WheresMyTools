@@ -1,12 +1,12 @@
 @rootURL = http://localhost:5126
 
-GET {{rootURL}}/api/data/records
+GET {{rootURL}}/api/view/records
 Accept: application/json
 
 ###
-GET {{rootURL}}/api/data/tools
+GET {{rootURL}}/api/view/loadData
 Accept: application/json
 
 ###
-GET {{rootURL}}/api/data/employee
+GET {{rootURL}}/api/view/employeeTools
 Accept: application/json

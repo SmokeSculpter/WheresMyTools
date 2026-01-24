@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "RESTApi.Controllers.DataController",
+    "ContainingType": "RESTApi.Controllers.ViewController",
     "Method": "GetEmployees",
-    "RelativePath": "api/Data/Employee",
+    "RelativePath": "api/View/EmployeeTools",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,16 +10,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RESTApi.Controllers.DataController",
-    "Method": "GetAllRecords",
-    "RelativePath": "api/Data/Records",
+    "ContainingType": "RESTApi.Controllers.ViewController",
+    "Method": "Get_Tools_And_Employees",
+    "RelativePath": "api/View/LoadData",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[RESTApi.Views.RecordView, RESTApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "RESTApi.Views.OnPageLoadView",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -30,16 +30,16 @@
     ]
   },
   {
-    "ContainingType": "RESTApi.Controllers.DataController",
-    "Method": "GetAllTools",
-    "RelativePath": "api/Data/Tools",
+    "ContainingType": "RESTApi.Controllers.ViewController",
+    "Method": "Get_All_Records",
+    "RelativePath": "api/View/Records",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[RESTApi.Models.Tool, RESTApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[RESTApi.Views.RecordView, RESTApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
