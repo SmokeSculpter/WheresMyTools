@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9rc0md6xhyI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hyaci\\Desktop\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hyaci\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.11\\microsoft.aspnetcore.openapi.9.0.11.nupkg.sha512",
+    "C:\\Users\\Hyaci\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
