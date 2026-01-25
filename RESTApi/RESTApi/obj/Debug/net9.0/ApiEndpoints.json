@@ -29,7 +29,7 @@
         "IsRequired": true
       },
       {
-        "Name": "request",
+        "Name": "record",
         "Type": "RESTApi.DTO.CheckOutDTO",
         "IsRequired": true
       }

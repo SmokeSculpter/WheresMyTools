@@ -106,7 +106,7 @@ namespace RESTApi.Controllers
             var record = await _context.Records.FirstOrDefaultAsync(x => x.ToolId == id && x.DateCheckedIn == null); ;
 
             if (tool == null)
-                return BadRequest();
+                return BadRequest("Tool could not be found.");
 
             tool.ToolStatus = true;
             record.DateCheckedIn = DateOnly.FromDateTime(DateTime.Now);
@@ -129,8 +129,8 @@ namespace RESTApi.Controllers
         [HttpPost("CheckOut/{id}")]
         public async Task<IActionResult> Check_Tool_Out(int id, CheckOutDTO record)
         {
-            if(request == null) 
-                return BadRequest();
+            if(record == null) 
+                return BadRequest("Must provide a record");
 
             var newRecord = new Record
             {

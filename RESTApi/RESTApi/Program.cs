@@ -15,7 +15,19 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         builder.Configuration.GetConnectionString("WheresMyTools"));
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontEnd", builder =>
+    {
+        builder.WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowFrontEnd");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
