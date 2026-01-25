@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using RESTApi.Models;
 using RESTApi.Views;
+using RESTApi.DTO;
 
 namespace RESTApi.Controllers
 {
@@ -48,6 +49,7 @@ namespace RESTApi.Controllers
             { 
                 RecordId = record.RecordId,
                 DateCheckedIn = record.DateCheckedIn,
+                DateCheckedOut = record.DateCheckedOut,
                 ToolId = record.Tool.ToolId,
                 ToolName = record.Tool.ToolName,
                 ToolCategory = record.Tool.Category,
@@ -88,19 +90,61 @@ namespace RESTApi.Controllers
                         }).ToListAsync()
                 );
         }
-
+        /// <summary>
+        ///     Put method to check tool back in
+        /// </summary>
+        /// <param name="id">
+        ///     id is the ToolId of the tool you are checking in
+        /// </param>
+        /// <returns>
+        ///     Returns status 400 if tool could not be found or status 204 if the tool is found
+        /// </returns>
         [HttpPut("CheckIn/{id}")]
         public async Task<IActionResult> Check_Tool_In(int id)
         {
             var tool = await _context.Tools.FindAsync(id);
-            var record = await _context.Records.Where(x => x.Tool.ToolId == id).FirstOrDefaultAsync();
+            var record = await _context.Records.FirstOrDefaultAsync(x => x.ToolId == id && x.DateCheckedIn == null); ;
 
             if (tool == null)
                 return BadRequest();
 
             tool.ToolStatus = true;
-            record.DateCheckedIn = new DateOnly();
+            record.DateCheckedIn = DateOnly.FromDateTime(DateTime.Now);
 
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        /// <summary>
+        ///     Post method to check tool out. Creates a new record for the tool and employee.
+        /// </summary>
+        /// <param name="id">
+        ///     id is the ToolId of the tool you are trying to check out.
+        /// </param>
+        /// <param name="record">
+        ///     record is the new record to be created for the employee and tool.
+        /// </param>
+        /// <returns></returns>
+        [HttpPost("CheckOut/{id}")]
+        public async Task<IActionResult> Check_Tool_Out(int id, CheckOutDTO record)
+        {
+            if(request == null) 
+                return BadRequest();
+
+            var newRecord = new Record
+            {
+                DateCheckedOut = record.DateCheckedOut,
+                DateCheckedIn = record.DateCheckedIn,
+                ToolId = record.ToolId,
+                EmployeeId = record.EmployeeId
+            };
+
+            var tool = await _context.Tools.FindAsync(id);
+
+            tool.ToolStatus = false;
+
+            await _context.AddAsync(newRecord);
             await _context.SaveChangesAsync();
 
             return NoContent();

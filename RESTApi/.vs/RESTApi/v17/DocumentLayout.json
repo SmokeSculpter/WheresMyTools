@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\hyaci\\desktop\\personalprojects\\wheresmytools\\restapi\\restapi\\views\\recordview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\views\\recordview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\hyaci\\desktop\\personalprojects\\wheresmytools\\restapi\\restapi\\dto\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\dto\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,6 +66,18 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CheckOutDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\DTO\\CheckOutDTO.cs",
+              "RelativeDocumentMoniker": "RESTApi\\DTO\\CheckOutDTO.cs",
+              "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\DTO\\CheckOutDTO.cs",
+              "RelativeToolTip": "RESTApi\\DTO\\CheckOutDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T03:57:22.563Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "RecordView.cs",
               "DocumentMoniker": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\RecordView.cs",
@@ -70,7 +86,8 @@
               "RelativeToolTip": "RESTApi\\Views\\RecordView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T19:09:29.051Z"
+              "WhenOpened": "2026-01-24T19:09:29.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -93,7 +110,7 @@
               "RelativeDocumentMoniker": "RESTApi\\Controllers\\ViewController.cs",
               "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Controllers\\ViewController.cs",
               "RelativeToolTip": "RESTApi\\Controllers\\ViewController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAwwGgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAI4AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-24T06:49:36.221Z",
               "EditorCaption": ""
@@ -106,7 +123,7 @@
               "RelativeDocumentMoniker": "RESTApi\\RESTApi.http",
               "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.http",
               "RelativeToolTip": "RESTApi\\RESTApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-01-24T06:38:45.368Z",
               "EditorCaption": ""

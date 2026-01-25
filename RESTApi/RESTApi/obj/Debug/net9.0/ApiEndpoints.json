@@ -17,6 +17,27 @@
   },
   {
     "ContainingType": "RESTApi.Controllers.ViewController",
+    "Method": "Check_Tool_Out",
+    "RelativePath": "api/View/CheckOut/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "RESTApi.DTO.CheckOutDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RESTApi.Controllers.ViewController",
     "Method": "GetEmployees",
     "RelativePath": "api/View/EmployeeTools",
     "HttpMethod": "GET",
