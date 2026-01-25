@@ -88,5 +88,22 @@ namespace RESTApi.Controllers
                         }).ToListAsync()
                 );
         }
+
+        [HttpPut("CheckIn/{id}")]
+        public async Task<IActionResult> Check_Tool_In(int id)
+        {
+            var tool = await _context.Tools.FindAsync(id);
+            var record = await _context.Records.Where(x => x.Tool.ToolId == id).FirstOrDefaultAsync();
+
+            if (tool == null)
+                return BadRequest();
+
+            tool.ToolStatus = true;
+            record.DateCheckedIn = new DateOnly();
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

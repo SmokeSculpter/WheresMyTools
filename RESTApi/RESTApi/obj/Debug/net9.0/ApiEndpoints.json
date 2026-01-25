@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "RESTApi.Controllers.ViewController",
+    "Method": "Check_Tool_In",
+    "RelativePath": "api/View/CheckIn/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RESTApi.Controllers.ViewController",
     "Method": "GetEmployees",
     "RelativePath": "api/View/EmployeeTools",
     "HttpMethod": "GET",
