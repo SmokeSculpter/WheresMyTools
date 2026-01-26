@@ -1,6 +1,71 @@
-import axios from "axios"
-import type { ToolsAndEmployees, EmployeeTools, Record } from "./interfaces"
+import axios, { all } from "axios"
+import type { ToolsAndEmployees, EmployeeTools, Record, Tool } from "./interfaces"
+import { DataList } from "./interfaces"
 import { RecordDTO } from "./interfaces";
+
+const baseUrl = "https://localhost:7014/api/view";
+
+const getData = async <Type>(endPoint: string): Promise<Type | undefined> => {
+    let data: Type | undefined = undefined;
+    await axios.get<Type>(`${baseUrl}/${endPoint}`).then(response => {
+        if(response.status == 200){
+            data = response.data;
+        }
+    }).catch(() => alert("Failed to fetch data"));
+
+    return data;
+};
+
+export const fetchDbData = async (
+    allData: DataList | undefined,
+    setAllData: React.Dispatch<React.SetStateAction<DataList | undefined>>,
+    dataToFetch: "Tools And Employees" | "Employee Tools" | "Records"
+) => {
+    let dataToolsAndEmployees: ToolsAndEmployees | undefined = undefined;
+    let dataEmployeeTools: EmployeeTools[] | undefined = undefined;
+    let dataRecords: Record[] | undefined = undefined;
+
+    switch (dataToFetch){
+        case "Tools And Employees":
+            dataToolsAndEmployees = await getData<ToolsAndEmployees | undefined>("loadData");
+
+            allData?.employeeTools != undefined ? 
+                dataEmployeeTools = await getData<EmployeeTools[] | undefined>("employeeTools") : 
+                dataEmployeeTools = undefined
+            
+            allData?.records != undefined ? 
+                dataRecords = await getData<Record[] | undefined>("records") :
+                dataRecords = undefined;
+
+            setAllData(prev => new DataList(
+                dataToolsAndEmployees,
+                prev?.employeeTools != undefined ? dataEmployeeTools : undefined,
+                prev?.records != undefined ? dataRecords : undefined
+            ));
+            break;
+
+        case "Employee Tools":
+            dataEmployeeTools = await getData<EmployeeTools[] | undefined>("employeeTools");
+
+            allData?.toolsAndEmployees != undefined ? 
+                dataToolsAndEmployees = await getData<ToolsAndEmployees | undefined>("loadData") : 
+                dataToolsAndEmployees = undefined
+            
+            allData?.records != undefined ? 
+                dataRecords = await getData<Record[] | undefined>("records") :
+                dataRecords = undefined;
+
+            setAllData(prev => new DataList(
+                prev?.toolsAndEmployees != undefined ? dataToolsAndEmployees : undefined,
+                dataEmployeeTools,
+                prev?.records != undefined ? dataRecords : undefined
+            ));
+            break;
+
+        case "Records":
+            break;
+    }
+};
 
 /**
  * Loads inital tool and employee data from Rest Api.

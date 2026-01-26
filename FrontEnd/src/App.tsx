@@ -1,19 +1,21 @@
 import './App.css'
 
-import type { ToolsAndEmployees, Tool } from './Utilities/interfaces'
+import type { ToolsAndEmployees, Tool, DataList } from './Utilities/interfaces'
 import { fetchToolsAndEmployees } from './Utilities/fetchData';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState, useMemo, createContext } from 'react'
 
 import ToolElement from './components/ToolElement';
 import EmployeeToolsView from './components/EmployeeTools';
 import RecordsView from './components/RecordsView';
 
+export const DataContext = createContext<{ allData: DataList | undefined, setAllData: React.Dispatch<React.SetStateAction<DataList | null>> | undefined }>({  allData: undefined, setAllData: undefined});
 
 function App() {
+  const [allData, setAllData] = useState<DataList | undefined>(undefined);
   const [data, setData] = useState<ToolsAndEmployees>();
   const [currentView, setCurrentView] = useState<string>("Inventory");
 
@@ -24,6 +26,7 @@ function App() {
 
   useEffect(() => {
     fetchToolsAndEmployees(setData);
+    console.log(allData);
   }, []);
 
   const filteredTools = useMemo(() => {

@@ -36,10 +36,16 @@ export interface Record {
     employeePosition: string
 }
 
-export interface DataList {
-    data: ToolsAndEmployees | undefined,
-    employeeTools: EmployeeTools[] | undefined,
+export class DataList {
+    toolsAndEmployees: ToolsAndEmployees | undefined;
+    employeeTools: EmployeeTools[] | undefined;
     records: Record[] | undefined
+
+    constructor(toolsAndEmployees?: ToolsAndEmployees, employeeTools?: EmployeeTools[], records?: Record[]){
+        this.toolsAndEmployees = toolsAndEmployees;
+        this.employeeTools = employeeTools;
+        this.records = records;
+    }
 }
 
 export class RecordDTO {
