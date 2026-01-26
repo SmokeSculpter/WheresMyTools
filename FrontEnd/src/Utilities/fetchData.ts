@@ -1,5 +1,5 @@
 import axios from "axios"
-import type { Tool, Employee, Data, EmployeeTools, Record } from "./interfaces"
+import type { Data, EmployeeTools, Record } from "./interfaces"
 import { RecordDTO } from "./interfaces";
 
 
@@ -30,5 +30,17 @@ export const fetchRecords = (setRecords: React.Dispatch<React.SetStateAction<Rec
 export const checkToolOut = (toolId: number, employeeId: number) => {
     const record: RecordDTO = new RecordDTO(toolId, employeeId);
 
-    console.log(JSON.stringify(record));
+    axios.post(`https://localhost:7014/api/view/checkOut/${toolId}`, record).then(response => {
+        if(response.status == 204){
+            alert("Tool checked out!");
+        }
+    }).catch(err => console.error(err));
 };
+
+export const checkOut = (toolId: number) => {
+    axios.put(`https://localhost:7014/api/view/checkIn/${toolId}`).then(response => {
+        if(response.status == 204){
+            alert("Tool checked in!");
+        }
+    }).catch();
+}

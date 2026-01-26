@@ -3,6 +3,7 @@ export interface Tool {
     toolName: string,
     category: string,
     toolStatus: boolean,
+    checkedOut?: string
 }
 
 export interface Employee {
@@ -13,7 +14,7 @@ export interface Employee {
 
 export interface Data{
     tools: Tool[],
-    employee: Employee[]
+    employees: Employee[]
 }
 
 export interface EmployeeTools{
@@ -26,7 +27,7 @@ export interface EmployeeTools{
 export interface Record{
     recordId: number,
     dateCheckedOut: string,
-    dataeCheckedIn: string | null,
+    dateCheckedIn: string | null,
     toolId: number,
     toolName: string,
     toolCategory: string,

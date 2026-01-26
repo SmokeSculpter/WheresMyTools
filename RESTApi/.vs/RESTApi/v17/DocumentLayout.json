@@ -74,7 +74,8 @@
               "RelativeToolTip": "RESTApi\\Views\\EmployeeView.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T00:17:24.942Z"
+              "WhenOpened": "2026-01-26T00:17:24.942Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -108,7 +109,7 @@
               "RelativeDocumentMoniker": "RESTApi\\Controllers\\ViewController.cs",
               "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\Controllers\\ViewController.cs",
               "RelativeToolTip": "RESTApi\\Controllers\\ViewController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAcwGEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-24T06:49:36.221Z",
               "EditorCaption": ""
@@ -121,7 +122,7 @@
               "RelativeDocumentMoniker": "RESTApi\\RESTApi.http",
               "ToolTip": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.http",
               "RelativeToolTip": "RESTApi\\RESTApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-01-24T06:38:45.368Z",
               "EditorCaption": ""

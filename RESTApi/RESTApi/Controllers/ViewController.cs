@@ -94,7 +94,8 @@ namespace RESTApi.Controllers
                             Position = x.Where(y => y.Employee.EmployeeId == x.Key).Select(em => em.Employee.Position).FirstOrDefault(),
                             Tools = x.Select(x => new
                             {
-                                Name = x.Tool.ToolName,
+                                x.ToolId,
+                                x.Tool.ToolName,
                                 x.Tool.Category,
                                 Status = x.Tool.ToolStatus,
                                 CheckedOut = x.DateCheckedOut
