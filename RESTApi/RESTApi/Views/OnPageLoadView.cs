@@ -4,11 +4,11 @@ namespace RESTApi.Views
 {
     public class OnPageLoadView
     {
-        public List<Tool> Tools { get; set; }
+        public List<ToolView> Tools { get; set; }
 
-        public List<Employee> Employees { get; set; }
+        public List<EmployeeView> Employees { get; set; }
 
-        public OnPageLoadView(List<Tool> tools, List<Employee> employees)
+        public OnPageLoadView(List<ToolView> tools, List<EmployeeView> employees)
         {
             Tools = tools;
             Employees = employees;

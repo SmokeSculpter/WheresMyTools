@@ -27,9 +27,21 @@ namespace RESTApi.Controllers
         [HttpGet("LoadData")]
         public async Task<ActionResult<OnPageLoadView>> Get_Tools_And_Employees()
         {
-            var tools = await _context.Tools.ToListAsync();
+            var tools = await _context.Tools.Select(tool => new ToolView
+            {
+                ToolId = tool.ToolId,
+                ToolName = tool.ToolName,
+                Category = tool.Category,
+                ToolStatus = tool.ToolStatus,
+            }).ToListAsync();
 
-            var employees = await _context.Employees.ToListAsync();
+            var employees = await _context.Employees.Select(employee => new EmployeeView
+            {
+                EmployeeId = employee.EmployeeId,
+                FullName = employee.FirstName + " " + employee.LastName,
+                Position = employee.Position,
+
+            }).ToListAsync();
 
             var data = new OnPageLoadView(tools, employees);
 
@@ -77,6 +89,7 @@ namespace RESTApi.Controllers
                         .GroupBy(x => x.Employee.EmployeeId)
                         .Select(x => new
                         {
+                            EmployeeId = x.Where(y => y.Employee.EmployeeId == x.Key).Select(em => em.EmployeeId).FirstOrDefault(),
                             Name = x.Where(y => y.Employee.EmployeeId == x.Key).Select(em => em.Employee.FirstName + " " + em.Employee.LastName).FirstOrDefault(),
                             Position = x.Where(y => y.Employee.EmployeeId == x.Key).Select(em => em.Employee.Position).FirstOrDefault(),
                             Tools = x.Select(x => new
