@@ -7,7 +7,7 @@ import type { EmployeeTools, Tool } from "../Utilities/interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faGear } from "@fortawesome/free-solid-svg-icons";
 
-import { checkOut } from "../Utilities/fetchData";
+import { checkIn } from "../Utilities/fetchData";
 
 const EmployeeToolsView = () => {
 const [employeesTools, setEmployeesTools] = useState<EmployeeTools[]>();
@@ -50,7 +50,7 @@ const [employeesTools, setEmployeesTools] = useState<EmployeeTools[]>();
                                 <p className="text-gray-500 text-sm">Date Checked Out</p>
                                 <p>{tool.checkedOut}</p>
                             </div>
-                            <button onClick={() => checkOut(tool.toolId)} className={`w-2/10 py-2 bg-blue-500 cursor-pointer hover:bg-green-500 text-white font-medium rounded-md`}>
+                            <button onClick={() => checkIn(tool.toolId)} className={`w-2/10 py-2 bg-blue-500 cursor-pointer hover:bg-green-500 text-white font-medium rounded-md`}>
                                 Check In
                             </button>
                         </div>

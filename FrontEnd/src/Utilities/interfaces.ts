@@ -12,7 +12,7 @@ export interface Employee {
     position: string,
 }
 
-export interface Data{
+export interface ToolsAndEmployees{
     tools: Tool[],
     employees: Employee[]
 }
@@ -24,7 +24,7 @@ export interface EmployeeTools{
     tools: Tool[]
 }
 
-export interface Record{
+export interface Record {
     recordId: number,
     dateCheckedOut: string,
     dateCheckedIn: string | null,
@@ -36,7 +36,13 @@ export interface Record{
     employeePosition: string
 }
 
-export class RecordDTO{
+export interface DataList {
+    data: ToolsAndEmployees | undefined,
+    employeeTools: EmployeeTools[] | undefined,
+    records: Record[] | undefined
+}
+
+export class RecordDTO {
     dateCheckedOut: string;
     dateCheckedIn: null;
     toolId: number;

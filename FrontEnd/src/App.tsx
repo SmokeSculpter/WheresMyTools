@@ -1,6 +1,6 @@
 import './App.css'
 
-import type { Data, Tool } from './Utilities/interfaces'
+import type { ToolsAndEmployees, Tool } from './Utilities/interfaces'
 import { fetchToolsAndEmployees } from './Utilities/fetchData';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +14,7 @@ import RecordsView from './components/RecordsView';
 
 
 function App() {
-  const [data, setData] = useState<Data>();
+  const [data, setData] = useState<ToolsAndEmployees>();
   const [currentView, setCurrentView] = useState<string>("Inventory");
 
   const [search, setSearch] = useState("");
@@ -44,7 +44,7 @@ function App() {
 }, [data, search, category, status]);
 
 
-  const getCategories = (data: Data) => {
+  const getCategories = (data: ToolsAndEmployees) => {
     let categories: string[] = ["All Categories"];
 
     for(let index = 0; index < data.tools.length; index++){

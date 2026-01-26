@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\coles\\desktop\\projects\\wheresmytools\\restapi\\restapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\coles\\desktop\\projects\\wheresmytools\\restapi\\restapi\\controllers\\viewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\controllers\\viewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\coles\\desktop\\projects\\wheresmytools\\restapi\\restapi\\views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\coles\\desktop\\projects\\wheresmytools\\restapi\\restapi\\views\\toolview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\views\\toolview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|c:\\users\\coles\\desktop\\projects\\wheresmytools\\restapi\\restapi\\views\\onpageloadview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{968BC1F1-6212-40C2-8F5A-F9E14A4BD949}|RESTApi\\RESTApi.csproj|solutionrelative:restapi\\views\\onpageloadview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ee48ac7-d7eb-4653-a54e-3bba557ccc9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\appsettings.json",
+              "RelativeDocumentMoniker": "RESTApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\appsettings.json",
+              "RelativeToolTip": "RESTApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-26T14:55:33.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeView.cs",
+              "DocumentMoniker": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\EmployeeView.cs",
+              "RelativeDocumentMoniker": "RESTApi\\Views\\EmployeeView.cs",
+              "ToolTip": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\EmployeeView.cs",
+              "RelativeToolTip": "RESTApi\\Views\\EmployeeView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T14:53:09.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ToolView.cs",
+              "DocumentMoniker": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\ToolView.cs",
+              "RelativeDocumentMoniker": "RESTApi\\Views\\ToolView.cs",
+              "ToolTip": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\ToolView.cs",
+              "RelativeToolTip": "RESTApi\\Views\\ToolView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T14:53:09.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OnPageLoadView.cs",
+              "DocumentMoniker": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\OnPageLoadView.cs",
+              "RelativeDocumentMoniker": "RESTApi\\Views\\OnPageLoadView.cs",
+              "ToolTip": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Views\\OnPageLoadView.cs",
+              "RelativeToolTip": "RESTApi\\Views\\OnPageLoadView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T14:53:09.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViewController.cs",
+              "DocumentMoniker": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Controllers\\ViewController.cs",
+              "RelativeDocumentMoniker": "RESTApi\\Controllers\\ViewController.cs",
+              "ToolTip": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\Controllers\\ViewController.cs",
+              "RelativeToolTip": "RESTApi\\Controllers\\ViewController.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAcwGEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T14:53:09.933Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 224,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
