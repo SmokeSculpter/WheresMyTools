@@ -34,3 +34,17 @@ export interface Record{
     employeeName: string,
     employeePosition: string
 }
+
+export class RecordDTO{
+    dateCheckedOut: string;
+    dateCheckedIn: null;
+    toolId: number;
+    employeeId: number;
+
+    constructor(toolId: number, employeeId: number){
+        this.dateCheckedOut = new Date().toISOString().split('T')[0];
+        this.dateCheckedIn = null;
+        this.toolId = toolId;
+        this.employeeId = employeeId;
+    }
+}

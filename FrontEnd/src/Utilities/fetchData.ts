@@ -1,5 +1,6 @@
 import axios from "axios"
 import type { Tool, Employee, Data, EmployeeTools, Record } from "./interfaces"
+import { RecordDTO } from "./interfaces";
 
 
 export const fetchToolsAndEmployees = (setData: React.Dispatch<React.SetStateAction<Data | undefined>>) => {
@@ -24,4 +25,10 @@ export const fetchRecords = (setRecords: React.Dispatch<React.SetStateAction<Rec
 
         setRecords(parsedData);
     }).catch(err => console.error(err));
+};
+
+export const checkToolOut = (toolId: number, employeeId: number) => {
+    const record: RecordDTO = new RecordDTO(toolId, employeeId);
+
+    console.log(JSON.stringify(record));
 };

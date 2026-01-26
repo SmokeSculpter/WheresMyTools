@@ -18,7 +18,7 @@ Accept: application/json
 ###
 POST {{rootURL}}/api/view/checkOut/1
 Content-Type: application/json
-  {
+ {
   "dateCheckedOut": "2026-01-01",
   "dateCheckedIn": null,
   "toolId": 1,
