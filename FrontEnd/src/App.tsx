@@ -1,23 +1,23 @@
-import type { Data, Tool, Employee } from './components/interfaces'
+import type { Data, Tool, Employee } from './Utilities/interfaces'
+import { fetchToolsAndEmployees } from './Utilities/fetchData';
 
 import './App.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios';
 
 function App() {
+  const [data, setData] = useState<Data>();
+
   useEffect(() => {
-    axios.get<Data>("https://localhost:7014/api/view/loadData").then(response => {
-      console.log(response.data)
-    }).catch(err => {
-      console.error(err);
-    })
-  });
+    fetchToolsAndEmployees(setData);
+    console.log(data);
+  }, []);
 
 
   return (
     <>
       <header className='max-w-240 mx-auto my-0 p-4'>
-        <h1 className='text-2xl font-medium'>Tool Inventory System</h1>
+        <h1 onClick={() => console.log(data)} className='text-2xl font-medium'>Tool Inventory System</h1>
       </header>
       <main className='max-w-240 mx-auto my-0'>
         <div className='px-4'>
