@@ -1,5 +1,5 @@
-import type { Data, Tool, Employee } from './Utilities/interfaces'
-import { fetchToolsAndEmployees } from './Utilities/fetchData';
+import type { Data, Tool, Employee, EmployeeTools, Record } from './Utilities/interfaces'
+import { fetchToolsAndEmployees, fetchEmployeeTools, fetchRecords } from './Utilities/fetchData';
 
 import './App.css'
 import { useEffect, useState } from 'react'
@@ -7,17 +7,18 @@ import axios from 'axios';
 
 function App() {
   const [data, setData] = useState<Data>();
+  const [employeeTools, setEmployeeTools] = useState<EmployeeTools[]>();
+  const [records, setRecords] = useState<Record[]>();
 
   useEffect(() => {
     fetchToolsAndEmployees(setData);
-    console.log(data);
   }, []);
 
 
   return (
     <>
       <header className='max-w-240 mx-auto my-0 p-4'>
-        <h1 onClick={() => console.log(data)} className='text-2xl font-medium'>Tool Inventory System</h1>
+        <h1 className='text-2xl font-medium'>Tool Inventory System</h1>
       </header>
       <main className='max-w-240 mx-auto my-0'>
         <div className='px-4'>
