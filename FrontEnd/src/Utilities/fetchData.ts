@@ -1,129 +1,102 @@
-import axios, { all } from "axios"
-import type { ToolsAndEmployees, EmployeeTools, Record, Tool } from "./interfaces"
+import axios from "axios"
+import type { ToolsAndEmployees, EmployeeTools, Record } from "./interfaces"
 import { DataList } from "./interfaces"
 import { RecordDTO } from "./interfaces";
 
 const baseUrl = "https://localhost:7014/api/view";
 
-const getData = async <Type>(endPoint: string): Promise<Type | undefined> => {
+
+/**
+ * Utility function used to fetch data from a specified endpoint.
+ *
+ * @param {"loadData" | "employeeTools" | "records"} endPoint - State setter data object.
+ * @returns {Promise<void>}
+ */
+const getData = async <Type>(endPoint: "loadData" | "employeeTools" | "records"): Promise<Type | undefined> => {
     let data: Type | undefined = undefined;
     await axios.get<Type>(`${baseUrl}/${endPoint}`).then(response => {
-        if(response.status == 200){
-            data = response.data;
-        }
+        data = response.data;
+
     }).catch(() => alert("Failed to fetch data"));
 
     return data;
 };
 
-export const fetchDbData = async (
-    allData: DataList | undefined,
-    setAllData: React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined,
-    dataToFetch: "Tools And Employees" | "Employee Tools" | "Records"
+/**
+ * Used to initally fetch all records from the database.
+ *
+ * @param {React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined} setAllData - State setter data object.
+ * @returns {Promise<void>}
+ */
+export const fetchToolsAndEmployees = async (setAllData: React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined): Promise<void> => {
+    let toolAndEmployees:ToolsAndEmployees | undefined = await getData<ToolsAndEmployees | undefined>("loadData");
+
+    setAllData?.((prev: DataList | undefined) => new DataList(
+        toolAndEmployees,
+        prev?.employeeTools,
+        prev?.records
+    ));
+}
+
+/**
+ * Used to initally fetch all tools and employees from the database.
+ *
+ * @param {React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined} setAllData - State setter data object.
+ * @returns {Promise<void>}
+ */
+export const fetchEmployeeTools = async (setAllData: React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined): Promise<void> => {
+    let employeeTools:EmployeeTools[] | undefined = await getData<EmployeeTools[] | undefined>("employeeTools");
+
+    setAllData?.((prev: DataList | undefined) => new DataList(
+        prev?.toolsAndEmployees,
+        employeeTools,
+        prev?.records
+    ));
+}
+
+/**
+ * Used to initally fetch all data records from the database.
+ *
+ * @param {React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined} setAllData - State setter data object.
+ * @returns {Promise<void>}
+ */
+export const fetchAllRecords = async (setAllData: React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined): Promise<void> => {
+    let records:Record[] | undefined = await getData<Record[] | undefined>("records");
+
+    setAllData?.((prev: DataList | undefined) => new DataList(
+        prev?.toolsAndEmployees,
+        prev?.employeeTools,
+        records
+    ));
+}
+
+/**
+ * This function is used to update client side data after changes have been made in the database.
+ * It checks what sets of data have already been loaded and refetches data if they have.
+ *
+ * @param {DataList | undefined} allData - object containing all data.
+ * @param {React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined} setAllData - State setter data object.
+ * @returns {Promise<void>}
+ */
+export const updateData = async (
+    allData: DataList | undefined, 
+    setAllData: React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined
 ) => {
-        let dataToolsAndEmployees: ToolsAndEmployees | undefined = undefined;
-        let dataEmployeeTools: EmployeeTools[] | undefined = undefined;
-        let dataRecords: Record[] | undefined = undefined;
+    let toolAndEmployees: ToolsAndEmployees | undefined = allData?.toolsAndEmployees != undefined  ?
+        await getData<ToolsAndEmployees | undefined>("loadData") : undefined;
 
-        switch (dataToFetch){
-            case "Tools And Employees":
-                dataToolsAndEmployees = await getData<ToolsAndEmployees | undefined>("loadData");
-                
-                allData?.employeeTools != undefined ? 
-                    dataEmployeeTools = await getData<EmployeeTools[] | undefined>("employeeTools") : 
-                    dataEmployeeTools = undefined
-                
-                allData?.records != undefined ? 
-                    dataRecords = await getData<Record[] | undefined>("records") :
-                    dataRecords = undefined;
+    let employeeTools: EmployeeTools[] | undefined = allData?.employeeTools != undefined ?
+        await getData<EmployeeTools[] | undefined>("employeeTools") : undefined;
 
-                setAllData?.((prev: DataList | undefined) => new DataList(
-                    dataToolsAndEmployees,
-                    prev?.employeeTools != undefined ? dataEmployeeTools : undefined,
-                    prev?.records != undefined ? dataRecords : undefined
-                ));
-                break;
+    let records: Record[] | undefined = allData?.records != undefined ?
+        await getData<Record[] | undefined>("records") : undefined;
 
-            case "Employee Tools":
-                dataEmployeeTools = await getData<EmployeeTools[] | undefined>("employeeTools");
-
-                allData?.toolsAndEmployees != undefined ? 
-                    dataToolsAndEmployees = await getData<ToolsAndEmployees | undefined>("loadData") : 
-                    dataToolsAndEmployees = undefined
-                
-                allData?.records != undefined ? 
-                    dataRecords = await getData<Record[] | undefined>("records") :
-                    dataRecords = undefined;
-
-                setAllData?.((prev: DataList | undefined) => new DataList(
-                    prev?.toolsAndEmployees != undefined ? dataToolsAndEmployees : undefined,
-                    dataEmployeeTools,
-                    prev?.records != undefined ? dataRecords : undefined
-                ));
-                break;
-
-            case "Records":
-                dataRecords = await getData<Record[] | undefined>("records");
-
-                allData?.toolsAndEmployees != undefined ? 
-                    dataToolsAndEmployees = await getData<ToolsAndEmployees | undefined>("loadData") : 
-                    dataToolsAndEmployees = undefined
-                
-                allData?.employeeTools != undefined ? 
-                    dataEmployeeTools = await getData<EmployeeTools[] | undefined>("employeeTools") :
-                    dataEmployeeTools = undefined;
-
-                setAllData?.((prev: DataList | undefined) => new DataList(
-                    prev?.toolsAndEmployees != undefined ? dataToolsAndEmployees : undefined,
-                    prev?.employeeTools != undefined ? dataEmployeeTools : undefined,
-                    dataRecords
-                ));
-                break;
-        }
-};
-
-/**
- * Loads inital tool and employee data from Rest Api.
- *
- * @param {React.Dispatch<React.SetStateAction<ToolsAndEmployees | undefined>>} setData - State setter for data..
- * @returns {Promise<void>}
- */
-export const fetchToolsAndEmployees = async (setData: React.Dispatch<React.SetStateAction<ToolsAndEmployees | undefined>>) => {
-    await axios.get<ToolsAndEmployees>("https://localhost:7014/api/view/loadData").then(response => {
-        const parsedData: ToolsAndEmployees = response.data;
-
-        setData(parsedData);
-    }).catch(err => console.error(err));
-};
-
-/**
- * Loads tools for any employee that has tools checked out.
- *
- * @param {React.Dispatch<React.SetStateAction<EmployeeTools[] | undefined>>} setEmployeeTools - State setter for employeeTools..
- * @returns {Promise<void>}
- */
-export const fetchEmployeeTools = async (setEmployeeTools: React.Dispatch<React.SetStateAction<EmployeeTools[] | undefined>>) => {
-    axios.get("https://localhost:7014/api/view/employeeTools").then(response => {
-        const parsedData: EmployeeTools[] = response.data;
-
-        setEmployeeTools(parsedData);
-    }).catch(() => alert("Could not fetch data"));
-};
-
-/**
- * Loads records.
- *
- * @param {React.Dispatch<React.SetStateAction<Record[] | undefined>>} setRecords - State setter for records.
- * @returns {Promise<void>}
- */
-export const fetchRecords = async (setRecords: React.Dispatch<React.SetStateAction<Record[] | undefined>>) => {
-    await axios.get("https://localhost:7014/api/view/records").then(response => {
-        const parsedData = response.data;
-
-        setRecords(parsedData);
-    }).catch(() => alert("Could not fetch data"));
-};
-
+    setAllData?.(new DataList(
+        toolAndEmployees,
+        employeeTools,
+        records
+    ));
+}
 
 /**
  * Post method to check tool out and create new record of tool check out.

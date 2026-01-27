@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj": {}
+    "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj": {
+    "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj",
+        "projectUniqueName": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj",
         "projectName": "RESTApi",
-        "projectPath": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj",
-        "packagesPath": "C:\\Users\\coles\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\coles\\Desktop\\Projects\\WheresMyTools\\RESTApi\\RESTApi\\obj\\",
+        "projectPath": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\RESTApi.csproj",
+        "packagesPath": "C:\\Users\\Hyaci\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hyaci\\Desktop\\PersonalProjects\\WheresMyTools\\RESTApi\\RESTApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\coles\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hyaci\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

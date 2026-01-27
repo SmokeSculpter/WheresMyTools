@@ -1,20 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faGear } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 
 import type { Record } from "../Utilities/interfaces";
-import { fetchRecords } from "../Utilities/fetchData";
+import { fetchAllRecords } from "../Utilities/fetchData";
+
+import { DataContext } from "../App";
 
 const RecordsView = () => {
-    const [records, setRecords] = useState<Record[]>();
+    const {allData, setAllData} = useContext(DataContext);
 
     useEffect(() => {
-        fetchRecords(setRecords);
+        fetchAllRecords(setAllData);
     }, []);
 
-    return ( 
+    return (
         <>
-            {records?.map((record: Record) => {
+            {allData != undefined && allData.records != undefined ? allData.records.map((record: Record) => {
                 return(
                         <div key={record.recordId} className="w-full bg-white border-gray-500 border p-4 rounded-md mb-4">
                             <div className="flex justify-between items-center mb-4">
@@ -60,7 +62,7 @@ const RecordsView = () => {
                             </div>
                         </div>
                 )
-            })}
+            }) : <p className="text-lg font-bold">Loading</p>}
         </>
      );
 }
