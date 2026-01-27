@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { DataContext } from "../App";
 
-import { fetchEmployeeTools } from "../Utilities/fetchData";
+import { fetchEmployeeTools, fetchDbData } from "../Utilities/fetchData";
 
 import type { EmployeeTools, Tool } from "../Utilities/interfaces";
 
@@ -10,10 +11,12 @@ import { faPerson, faGear } from "@fortawesome/free-solid-svg-icons";
 import { checkIn } from "../Utilities/fetchData";
 
 const EmployeeToolsView = () => {
-const [employeesTools, setEmployeesTools] = useState<EmployeeTools[]>();
+    const [employeesTools, setEmployeesTools] = useState<EmployeeTools[]>();
+    const { allData, setAllData } = useContext(DataContext);
 
     useEffect(() => {
         fetchEmployeeTools(setEmployeesTools);
+        fetchDbData(allData, setAllData, "Employee Tools");
     }, []);
 
     return (
