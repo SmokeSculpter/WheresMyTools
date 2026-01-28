@@ -17,7 +17,7 @@ const getData = async <Type>(endPoint: "loadData" | "employeeTools" | "records")
     await axios.get<Type>(`${baseUrl}/${endPoint}`).then(response => {
         data = response.data;
 
-    }).catch(() => alert("Failed to fetch data"));
+    }).catch((err) => console.error(err));
 
     return data;
 };
@@ -103,14 +103,18 @@ export const updateData = async (
  *
  * @param {number} toolId - toolId of tool to check out.
  * @param {number} employeeId - employeeId of employee checking out tool.
+ * @param {setFeedback: React.Dispatch<React.SetStateAction<string | null>>} setFeedback - Setter to let user know if update was made.
  * @returns {Promise<void>}
  */
-export const checkToolOut = async (toolId: number, employeeId: number) => {
+export const checkToolOut = async (toolId: number, employeeId: number, setFeedback: React.Dispatch<React.SetStateAction<[string, string] | null>>) => {
     const record: RecordDTO = new RecordDTO(toolId, employeeId);
 
     await axios.post(`https://localhost:7014/api/view/checkOut/${toolId}`, record).then(response => {
         if(response.status == 204){
-            alert("Tool checked out!");
+            setFeedback(["Success", "Tool has been checked out!"]);
+        }
+        else{
+            setFeedback(["Error", "Failed to check tool out"]);
         }
     }).catch(err => console.error(err));
 };
@@ -119,12 +123,16 @@ export const checkToolOut = async (toolId: number, employeeId: number) => {
  * Put method to update tool and record when tool is checked back in.
  *
  * @param {number} toolId - toolId of tool to check out.
+ * @param {setFeedback: React.Dispatch<React.SetStateAction<[string, string] | null>>} setFeedback - Setter to let user know if update was made.
  * @returns {Promise<void>}
  */
-export const checkIn = async (toolId: number) => {
+export const checkIn = async (toolId: number, setFeedback: React.Dispatch<React.SetStateAction<[string, string] | null>>) => {
     await axios.put(`https://localhost:7014/api/view/checkIn/${toolId}`).then(response => {
         if(response.status == 204){
-            alert("Tool checked in!");
+            setFeedback(["Success", "Tool has been checked in!"]);
         }
-    }).catch(() => alert("Failed to check tool in"));
+        else{
+            setFeedback(["Error", "Failed to check tool in"]);
+        }
+    }).catch((err) => console.error(err));
 }

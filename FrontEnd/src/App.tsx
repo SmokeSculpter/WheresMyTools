@@ -23,7 +23,7 @@ function App() {
         {/* Header */}
         <header className='max-w-240 mx-auto my-0 p-4 flex items-center text-blue-500'>
           <FontAwesomeIcon icon={faToolbox} size='xl'/>
-          <h1 onClick={() => console.log(allData)} className='text-2xl font-medium px-2'>Tool Inventory System</h1>
+          <h1 className='text-2xl font-medium px-2'>Where's My Tools?!</h1>
         </header>
 
         <main>
@@ -43,7 +43,9 @@ function App() {
             <div className='px-4'>
                 <div className='w-full bg-gray-300 h-px'/>
             </div>
-            <Tools/>
+            <div className={`max-w-240 mx-auto my-0 p-4 ${currentView == "Inventory" ? "" : "hidden"}`}>
+              <Tools/>
+            </div>
             <div className={`max-w-240 mx-auto my-0 p-4 ${currentView == "Check In" ? "" : "hidden"}`}>
                 {currentView == "Check In" ? <EmployeeToolsView/> : ""}
             </div>

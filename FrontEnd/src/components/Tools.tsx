@@ -4,15 +4,14 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState, useContext, useMemo, type ChangeEvent } from "react";
 import { DataContext } from "../App";
 
-import { checkToolOut, fetchToolsAndEmployees } from "../Utilities/fetchData";
+import { checkToolOut, fetchToolsAndEmployees, updateData } from "../Utilities/fetchData";
 import type { Employee, Tool, ToolsAndEmployees } from "../Utilities/interfaces";
+
+import Feedback from "./Feedback";
 
 const Tools = () => {
     const [employeeId, setEmployeeId] = useState<number>(0);
-
-    const handleSelect = (ev: ChangeEvent<HTMLSelectElement>) => {
-        setEmployeeId(Number(ev.target.value));
-    }
+    const [feedback, setFeedback] = useState<[string, string] | null>(null);
 
     const { allData, setAllData } = useContext(DataContext);
 
@@ -52,9 +51,10 @@ const Tools = () => {
     }
 
     return ( 
-        <>  
+        <>
+            <Feedback feedback={feedback} setter={setFeedback} />
             {/* Inventory Content */}
-            <div className={`max-w-240 mx-auto my-0 p-4`}>
+            <div className={`max-w-240 mx-auto my-0`}>
               <div className='w-full bg-white p-4 rounded-md border-gray-300 border'>
 
                 {/* Filters */}
@@ -85,7 +85,7 @@ const Tools = () => {
               </div>
 
               {/* Tools */}
-              <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-4 '>
+              <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-4'>
                 {allData != undefined && allData.toolsAndEmployees && filteredTools != undefined ? 
                     filteredTools.map((tool: Tool) =>(
                         <div key={tool.toolId} className="basis-1/3 bg-white border-gray-300 border p-4 box-border rounded-md">
@@ -109,7 +109,7 @@ const Tools = () => {
                                 </div>
                             </div>
 
-                            <select onChange={handleSelect} disabled={tool.toolStatus ? false : true} className={`border-gray-300 border focus:outline-none rounded-md p-1 mb-2 w-full ${!tool.toolStatus ? "bg-gray-500 text-gray-400" : ""}`} name="" id="">
+                            <select onChange={(ev: ChangeEvent<HTMLSelectElement>) => {setEmployeeId(Number(ev.target.value))}} disabled={tool.toolStatus ? false : true} className={`border-gray-300 border focus:outline-none rounded-md p-1 mb-2 w-full ${!tool.toolStatus ? "bg-gray-500 text-gray-400" : ""}`} name="" id="">
                                 <option value="">Select An Employee</option>
                                 {allData.toolsAndEmployees?.employees.map((employee: Employee) => {
                                     return(
@@ -119,7 +119,10 @@ const Tools = () => {
                             </select>
                         
                         
-                            <button onClick={() => checkToolOut(tool.toolId, employeeId)} className={`w-full py-2 ${tool.toolStatus ? "bg-blue-500 cursor-pointer hover:bg-green-500 text-white" : "bg-gray-500 text-gray-400"} font-medium rounded-md`}>
+                            <button onClick={async () => {
+                                await checkToolOut(tool.toolId, employeeId, setFeedback);
+                                await updateData(allData, setAllData);
+                            }} className={`w-full py-2 ${tool.toolStatus ? "bg-blue-500 cursor-pointer hover:bg-green-500 text-white" : "bg-gray-500 text-gray-400"} font-medium rounded-md`}>
                                 {tool.toolStatus ? "Check Out" : "Currently Checked Out "}
                             </button>
                         </div>
