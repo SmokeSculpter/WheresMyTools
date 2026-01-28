@@ -27,7 +27,7 @@ Database: SQL Server
 
 Tools: Visual Studio, VS Code, SSMS
 
-## Learning Goals
+## Learning Objectives
 Having previously focused on frontend development, this project served as my deep dive into backend architecture. My objectives were:
 
 - [x] Architect a REST API using ASP.NET Core.
