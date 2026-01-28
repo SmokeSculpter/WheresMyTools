@@ -23,7 +23,7 @@ const getData = async <Type>(endPoint: "loadData" | "employeeTools" | "records")
 };
 
 /**
- * Used to initally fetch all records from the database.
+ * Used to initally fetch all tools and employees from the database.
  *
  * @param {React.Dispatch<React.SetStateAction<DataList | undefined>> | undefined} setAllData - State setter data object.
  * @returns {Promise<void>}
