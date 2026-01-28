@@ -4,7 +4,7 @@ An equipment inventory management system designed to track Tools across a worksi
 - [Where's My Tools?!](#wheres-my-tools)
   - [Introduction](#introduction)
   - [Tech Stack](#tech-stack)
-  - [Learning Goals](#learning-goals)
+  - [Learning Objectives](#learning-objectives)
   - [Home Page](#home-page)
   - [Check-In Page](#check-in-page)
   - [Records Page](#records-page)
