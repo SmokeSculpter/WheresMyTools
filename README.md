@@ -1,6 +1,6 @@
 # Where's My Tools?!
 An equipment inventory management system designed to track Tools across a worksite. Built with a React frontend and an ASP.NET backend.
-
+## Table of Contents
 - [Where's My Tools?!](#wheres-my-tools)
   - [Introduction](#introduction)
   - [Tech Stack](#tech-stack)
