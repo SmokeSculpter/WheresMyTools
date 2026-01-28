@@ -30,17 +30,17 @@ Tools: Visual Studio, VS Code, SSMS
 ## Learning Objectives
 Having previously focused on frontend development, this project served as my deep dive into backend architecture. My objectives were:
 
-- [x] Architect a REST API using ASP.NET Core.
+- [x] Build a REST API using ASP.NET Core.
 
-- [x] Database Integration: Connect the API to SQL Server using EF Core (Code First/Database First).
+- [x] Connect the API to SQL Server using EF Core.
 
-- [x] HTTP Mastery: Implement full CRUD operations (GET, POST, PUT, DELETE).
+- [x] Implement all CRUD operations (GET, POST, PUT, DELETE).
 
-- [x] Data Consumption: Bridge the gap by populating a React frontend with fetched asynchronous data.
+- [x] Populate a React frontend with fetched asynchronous data.
 
-- [x] State Management: Reflect backend changes in the UI immediately upon successful requests.
+- [x] Reflect changes in data on the UI immediately upon successful requests.
 
-Reflections: While I successfully implemented the core logic, I recognized the need for more defensive programming and custom server error responses. My next project will be Jira like project management application with a larger database, authorization, and a complex UI.
+Reflections: While I successfully implemented the correct logic, I see the need for more defensive programming and custom error responses on the server side. My next project will be Jira like project management application with a larger database, authorization, and a complex UI.
 
 ## Home Page
 View what's available.
