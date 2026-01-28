@@ -40,7 +40,7 @@ Having previously focused on frontend development, this project served as my dee
 
 - [x] Reflect changes in data on the UI immediately upon successful requests.
 
-Reflections: While I successfully implemented the correct logic, I see the need for more defensive programming and custom error responses on the server side. My next project will be Jira like project management application with a larger database, authorization, and a complex UI.
+Reflections: While I successfully implemented the correct logic, I see the need for more defensive programming and custom error responses on the server side. My next project will be Jira like project management application with a larger database, authorization, a complex UI, and integrate unit tests (xUnit for back end and Vitest for front end).
 
 ## Home Page
 View what's available.
